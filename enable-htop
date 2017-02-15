@@ -8,7 +8,7 @@ use Term::ANSIColor;
 use Cwd;
 
 my $arch = `/bin/uname -m`;
-
+chomp($arch);
 print colored("Found ARCH: $arch \n", "bold cyan");
 
 my $cwd = getcwd();
@@ -27,7 +27,7 @@ given ($cwd) {
 			print colored("Copying files....\n", "bold cyan");
 			system("/bin/cp -rf * $modsa_dir/htop/");
 			print colored("Setting up symlinks....\n", "bold cyan");
-			chdir("$modsa_dir/htop/usr/local/bin");
+			chdir("$modsa_dir/htop/bin");
 			system("/bin/ln -snf htop.$arch htop");
 			chdir($mods_dir);
 			system("/bin/ln -snf ../mods-available/htop htop");
@@ -48,7 +48,7 @@ given ($cwd) {
 			print colored("Copying files....\n", "bold cyan");
 			system("/bin/cp -rf * $modsa_dir/htop/");
 			print colored("Setting up symlinks....\n", "bold cyan");
-			chdir("$modsa_dir/htop/usr/local/bin");
+			chdir("$modsa_dir/htop/bin");
 			system("/bin/ln -snf htop.$arch htop");
 			chdir($mods_dir);
 			system("/bin/ln -snf ../mods-available/htop htop");
@@ -65,7 +65,7 @@ given ($cwd) {
 		chomp($ans);
 		if ($ans =~ /^[Yy](?:es)?$/) {
 			print colored("Setting up symlinks....\n", "bold cyan");
-			chdir("$modsa_dir/htop/usr/local/bin");
+			chdir("$modsa_dir/htop/bin");
 			system("/bin/ln -snf htop.$arch htop");
 			chdir($mods_dir);
 			system("/bin/ln -snf ../mods-available/htop htop");
