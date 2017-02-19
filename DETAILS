@@ -1,0 +1,8 @@
+MOD_NAME=htop
+MOD_VERSION=0.0.2
+MOD_LONG_NAME="[3.1] htop v${MOD_VERSION}"
+MOD_INFO="htop for Smoothwall Express"
+MOD_DIR=/var/smoothwall/mods/htop
+MOD_FORUM=
+MOD_AUTHOR=dataking
+MOD_MAINTAINER=dataking
